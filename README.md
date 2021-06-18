@@ -1,5 +1,7 @@
-# Introducción a JavaScript y el DOM
-Este es el código resuelto del ejercicio del vídeo **Introducción a JavaScript y al DOM, la API de HTML 5 que nos permite manipular los elementos de nuestro sitio web**. El vídeo se encuentra en el siguiente enlace [Introducción a JavaScript y al DOM](https://youtu.be/4czt3flhGF0). Recuerda que JavaScript en 2021 👆, es el lenguaje de programación más popular por lo que no está de más hecharle un ojo o incluso intentar aprenderlo 💪💪💪
+# Repositorio de código del canal de Youtube
+Hola 🖖, mi nombre es Michel Roberto Traña Tablada, soy Software Engineer desde hace más de 5 años y profesionalmente laboro como Fullstack Developer 👨‍💻👨‍💻👨‍💻. En este repositorio estoy publicando los ejercicios resueltos en los vídeos que subo a mi canal de YouTube, el cual puedes encontrar en [Soymichel Dev 👨‍💻👌](https://youtube.soymichel.dev). Ahí estoy publicando contenido de programación en general, Frontend, Backend, buenas prácticas y más temas relacionados al desarrollo de software, por si esto te gusta podés suscribirte.
+
+Estamos en el mejor momento para dedicarnos a esta espectacular profesión; y con esfuerzo y dedicación seguro te convertirás en un gran desarrollador o una gran desarrolladora 💪💪💪
 
 Puedes encontrar más vídeos como este en mi canal de YouTube [Soymichel Dev 👨‍💻👩‍💻👩‍💻](https://youtube.soymichel.dev).
 
