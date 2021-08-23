@@ -14,9 +14,11 @@ Puedes encontrar más vídeos como este en mi canal de YouTube Soymichel Dev �
 
 Visita mi sitio web [https://soymichel.dev](https://soymichel.dev)
 
-![Michel Roberto Trañata Tablada | soymichel.dev](https://github.com/soymichelt/CV/raw/master/public/res/circleProfile64x64.png?style=centerme)
-
-img[src$="centerme"] {
-  display:block;
-  margin: 0 auto;
-}
+<p align="center">
+  <a href="https://soymichel.dev"><b>Michel Roberto Traña Tablada</b></a>
+  <br />
+  Software Engineer | FullStack Developer
+  <br />
+  <br />
+  <img width="48" height="48" src="https://github.com/soymichelt/CV/raw/master/public/res/circleProfile64x64.png" alt="Michel Roberto Trañata Tablada | soymichel.dev">
+</p>
