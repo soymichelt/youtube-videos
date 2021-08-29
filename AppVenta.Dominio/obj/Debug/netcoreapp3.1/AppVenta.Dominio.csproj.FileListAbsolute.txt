@@ -1,0 +1,13 @@
+C:\Users\soymichel\source\repos\AppVenta.Dominio\bin\Debug\netcoreapp3.1\AppVenta.Dominio.exe
+C:\Users\soymichel\source\repos\AppVenta.Dominio\bin\Debug\netcoreapp3.1\AppVenta.Dominio.deps.json
+C:\Users\soymichel\source\repos\AppVenta.Dominio\bin\Debug\netcoreapp3.1\AppVenta.Dominio.runtimeconfig.json
+C:\Users\soymichel\source\repos\AppVenta.Dominio\bin\Debug\netcoreapp3.1\AppVenta.Dominio.runtimeconfig.dev.json
+C:\Users\soymichel\source\repos\AppVenta.Dominio\bin\Debug\netcoreapp3.1\AppVenta.Dominio.dll
+C:\Users\soymichel\source\repos\AppVenta.Dominio\bin\Debug\netcoreapp3.1\AppVenta.Dominio.pdb
+C:\Users\soymichel\source\repos\AppVenta.Dominio\obj\Debug\netcoreapp3.1\AppVenta.Dominio.csprojAssemblyReference.cache
+C:\Users\soymichel\source\repos\AppVenta.Dominio\obj\Debug\netcoreapp3.1\AppVenta.Dominio.AssemblyInfoInputs.cache
+C:\Users\soymichel\source\repos\AppVenta.Dominio\obj\Debug\netcoreapp3.1\AppVenta.Dominio.AssemblyInfo.cs
+C:\Users\soymichel\source\repos\AppVenta.Dominio\obj\Debug\netcoreapp3.1\AppVenta.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\soymichel\source\repos\AppVenta.Dominio\obj\Debug\netcoreapp3.1\AppVenta.Dominio.dll
+C:\Users\soymichel\source\repos\AppVenta.Dominio\obj\Debug\netcoreapp3.1\AppVenta.Dominio.pdb
+C:\Users\soymichel\source\repos\AppVenta.Dominio\obj\Debug\netcoreapp3.1\AppVenta.Dominio.genruntimeconfig.cache

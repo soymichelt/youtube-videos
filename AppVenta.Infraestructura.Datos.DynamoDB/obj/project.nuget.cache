@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "WXpPhEJefPJeGgXtFdcu5xLlapDfsNaR7gO5jBdHv3CQPYJ/57BdCVJXanZe8ESJcr1pVzeghtiuGlsvdf+HtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\soymichel\\source\\repos\\AppVenta.Infraestructura.Datos.DynamoDB\\AppVenta.Infraestructura.Datos.DynamoDB.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\soymichel\\.nuget\\packages\\awssdk.core\\3.7.2.3\\awssdk.core.3.7.2.3.nupkg.sha512",
+    "C:\\Users\\soymichel\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.0.52\\awssdk.dynamodbv2.3.7.0.52.nupkg.sha512",
+    "C:\\Users\\soymichel\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\soymichel\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.15\\microsoft.netcore.app.host.win-x64.3.1.15.nupkg.sha512"
+  ],
+  "logs": []
+}

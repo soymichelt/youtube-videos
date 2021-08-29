@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.0.52" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppVenta.Aplicaciones\AppVenta.Aplicaciones.csproj" />
+    <ProjectReference Include="..\AppVenta.Dominio\AppVenta.Dominio.csproj" />
+    <ProjectReference Include="..\AppVenta.Infraestructura.Datos\AppVenta.Infraestructura.Datos.csproj" />
+  </ItemGroup>
+
+
+</Project>
