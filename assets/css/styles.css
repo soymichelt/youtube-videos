@@ -1,0 +1,123 @@
+body {
+    background: #F7F9FC;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: .3s;
+}
+
+main {
+    margin-top: 1.675rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.formulario {
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.formulario .control-texto {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    margin-right: 8px;
+}
+.control-texto:focus {
+    outline: none;
+}
+.formulario .control-btn {
+    border: none;
+    outline: 0;
+    height: 36px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    background-color: #262EC9;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.formulario, .todo {
+    max-width: 620px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: 0px 3px 15px #00000014;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.todo-item {
+    padding: 24px;
+    border-bottom: 1px solid #e5e6e6;
+    display: flex;
+    align-items: center;
+}
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-item h2, .todo-item p {
+    margin: 0;
+    transition: .3s;
+}
+
+.todo-item.tarea-terminada h2, .todo-item.tarea-terminada p {
+    text-decoration: line-through;
+    opacity: .5;
+}
+.todo-item.tarea-terminada .btn {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.todo-item p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.todo-item .btn {
+    height: 42px;
+    min-width: 42px;
+    box-sizing: border-box;
+    display: block;
+    background: #F7F9FC;
+    outline: none;
+    border: none;
+    padding: 12px 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #262EC9;
+    margin-left: 12px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.tema-oscuro {
+    background: black;
+}
+
+.tema-oscuro .formulario,
+.tema-oscuro .todo {
+    background: #2B2C3E;
+}
+
+.tema-oscuro h2, .tema-oscuro p {
+    color: white;
+}
+
+.tema-oscuro .todo-item {
+    border-bottom: 1px solid rgba(0,0,0,.9);
+}
+
+.tema-oscuro .btn {
+    background: rgba(255,255,255,.5);
+}
