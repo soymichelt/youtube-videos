@@ -1,0 +1,169 @@
+body {
+    background: #F7F9FC;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: .3s;
+}
+
+main {
+    margin-top: 1.675rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.formulario {
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario .control-texto {
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 12px;
+    resize: unset;
+    border: 1px solid #676767;
+    transition: .3s;
+}
+.formulario .control-texto:focus {
+    border: 1px solid #2F72DE;
+    outline: none;
+}
+.formulario .control-btn {
+    border: none;
+    outline: 0;
+    height: 42px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    background-color: #262EC9;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 4px;
+    transition: .3s;
+}
+.formulario .control-btn:disabled {
+    opacity: .75;
+}
+.formulario .control-btn:hover {
+    background-color: #2F72DE;
+}
+
+.formulario, .todo {
+    max-width: 620px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: 0px 3px 15px #00000014;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.todo-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader {
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 1.675rem;
+    z-index: 9;
+}
+
+.loader img {
+    width: 64px;
+}
+
+.todo {
+    min-height: 500px;
+    transition: .5s;
+}
+.todo.todo-loading {
+    opacity: .50;
+}
+
+.todo-item {
+    padding: 24px;
+    border-bottom: 1px solid #e5e6e6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-item h2, .todo-item p {
+    margin: 0;
+    transition: .3s;
+}
+.todo-item .todo-item-actions {
+    display: flex;
+}
+.todo-item .btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.todo-item.tarea-terminada h2, .todo-item.tarea-terminada p {
+    text-decoration: line-through;
+    opacity: .5;
+}
+.todo-item.tarea-terminada .btn {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.todo-item p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.todo-item .btn {
+    height: 42px;
+    min-width: 42px;
+    box-sizing: border-box;
+    display: block;
+    background: #F7F9FC;
+    outline: none;
+    border: none;
+    padding: 12px 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #262EC9;
+    margin-left: 12px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.tema-oscuro {
+    background: black;
+}
+
+.tema-oscuro .formulario,
+.tema-oscuro .todo {
+    background: #2B2C3E;
+}
+
+.tema-oscuro h2, .tema-oscuro p, .tema-oscuro h1 {
+    color: white;
+}
+
+.tema-oscuro .todo-item {
+    border-bottom: 1px solid rgba(0,0,0,.9);
+}
+
+.tema-oscuro .btn {
+    background: rgba(255,255,255,.5);
+}

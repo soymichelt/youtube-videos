@@ -1,0 +1,26 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Todo App with Frontend, Backend and Docker load balancer",
+  "workspaces": [
+    "todo-api",
+    "todo-app"
+  ],
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev:api": "npm run dev --workspace=todo-api",
+    "dev:app": "npm run start --workspace=todo-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soymichelt/youtube-videos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soymichelt/youtube-videos/issues"
+  },
+  "homepage": "https://github.com/soymichelt/youtube-videos#readme"
+}
