@@ -9,7 +9,7 @@ services:
       ports:
         - "9002:9000"
     nginx:
-      build: ./nginx
+      build: ./
       ports:
         - "8080:80"
       depends_on:
