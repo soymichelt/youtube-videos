@@ -10,4 +10,4 @@ COPY ./ ./
 
 EXPOSE 8000
 
-CMD ["npm", "run", "index.js"]
+CMD ["npm", "run", "start"]
