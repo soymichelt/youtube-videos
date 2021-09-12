@@ -2,12 +2,16 @@ version: '3'
 services:
     api1:
       build: ./../todo-api
+      environment:
+        SERVER_TAG: "SERVICE API 1"
       ports:
         - "9001:9000"
     api2:
       build: ./../todo-api
       ports:
         - "9002:9000"
+      environment:
+        SERVER_TAG: "SERVICE API 2"
     loadbalancer:
       build: ./
       ports:
