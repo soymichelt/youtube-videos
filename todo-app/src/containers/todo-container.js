@@ -26,7 +26,6 @@ export const TodoContainer = () => {
                 },
             })
             .then(res => {
-                console.log('Response >>>> ', res.text());
                 return res.json()
             })
             .then(data => {
