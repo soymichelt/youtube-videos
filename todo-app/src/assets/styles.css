@@ -151,7 +151,7 @@ main {
     transition: .3s;
 }
 .todo-item .btn:disabled {
-    opacity: .8;
+    opacity: .6;
 }
 
 .tema-oscuro {

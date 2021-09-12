@@ -5,6 +5,8 @@ import { useInputField } from "../hooks/useInputField";
 
 const API_URL = `${process.env.REACT_APP_API_URL}`;
 
+console.log("Conectados a: ", API_URL);
+
 export const TodoContainer = () => {
 
     const authorField = useInputField('');
@@ -18,8 +20,15 @@ export const TodoContainer = () => {
     
     useEffect(() => {
         if(loadingTodoList) {
-            fetch(API_URL)
-            .then(res => res.json())
+            fetch(API_URL, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(res => {
+                console.log('Response >>>> ', res.text());
+                return res.json()
+            })
             .then(data => {
                 setTodosData(data.data);
                 setLoadingTodoList(false);

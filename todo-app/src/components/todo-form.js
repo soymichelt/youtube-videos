@@ -9,7 +9,7 @@ export const TodoForm = ({
     onDelete,
 }) => {
     const today = new Date();
-    const todayFormated = `${today.getFullYear()}-${today.getMonth()}-${today.getDay()}`;
+    const todayFormated = `${today.getFullYear()}-${(today.getMonth() + 1)}-${today.getDate()}`;
     return (
         <form className="formulario">
             <input

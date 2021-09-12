@@ -20,6 +20,8 @@ export const TodoList = ({
                 )}
                 <section className={`todo ${loading ? 'todo-loading' : ''}`}>
                     {(items && items.length > 0) && items.map(item => {
+                        const completing = completeId === item.TodoID;
+
                         return (
                             <article
                                 key={item.TodoID}
@@ -30,21 +32,21 @@ export const TodoList = ({
                                     <p>{item.TodoDescription}</p>
                                 </div>
                                 <div className="todo-item-actions">
-                                    <button
-                                        className="btn"
-                                        onClick={() => onComplete(item.TodoID)}
-                                    >
-                                        <img src={CompleteIcon} />
-                                    </button>
                                     {item.TodoState === 1 && (
                                         <button
                                             className="btn"
-                                            onClick={() => onEdit(item)}
-                                            disabled={completeId && completeId === item.TodoID}
+                                            onClick={() => onComplete(item.TodoID)}
+                                            disabled={completing}
                                         >
-                                            <img src={EditIcon} />
+                                            <img src={CompleteIcon} />
                                         </button>
                                     )}
+                                    <button
+                                        className="btn"
+                                        onClick={() => onEdit(item)}
+                                    >
+                                        <img src={EditIcon} />
+                                    </button>
                                 </div>
                             </article>
                         );
