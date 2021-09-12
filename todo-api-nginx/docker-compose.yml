@@ -8,10 +8,10 @@ services:
       build: ./../todo-api
       ports:
         - "9002:9000"
-    nginx:
+    loadbalancer:
       build: ./
       ports:
-        - "8080:80"
+        - "3000:80"
       depends_on:
         - api1
         - api2

@@ -1,6 +1,13 @@
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
+const dotenv = require('dotenv');
 const todosRouter = require('./controllers/todo.controller');
+
+dotenv.config();
+
+const {
+    API_PORT = 9000,
+} = process.env;
 
 const app = express();
 
@@ -10,7 +17,6 @@ app.use(express.json());
 
 app.use('/api/todos', todosRouter);
 
-const PORT = 9000;
-app.listen(PORT, () => {
-    console.log(`API running on PORT ${PORT}`);
+app.listen(API_PORT, () => {
+    console.log(`API running on PORT ${API_PORT}`);
 });

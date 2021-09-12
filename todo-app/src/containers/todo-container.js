@@ -14,6 +14,7 @@ export const TodoContainer = () => {
     const [loadingTodoList, setLoadingTodoList] = useState(true);
     const [loadingTodoEditing, setLoadingTodoEditing] = useState(false);
     const [todoSelected, setTodoSelected] = useState(null);
+    const [todoCompleteId, setTodoCompleteId] = useState(null);
     
     useEffect(() => {
         if(loadingTodoList) {
@@ -83,7 +84,24 @@ export const TodoContainer = () => {
         });
     };
 
-    const handleComplete = (todoID) => {};
+    const handleComplete = (todoID) => {
+        setTodoCompleteId(todoID);
+        fetch(`${API_URL}/${todoID}/completed`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(res => res.json())
+        .then(data => {
+            setTodoCompleteId(null);
+            setLoadingTodoList(true);
+        })
+        .catch(error => {
+            console.log(error);
+            setTodoCompleteId(null);
+        });
+    };
 
     const handleEdit = (todo) => {
         authorField.update(todo.Author);
@@ -106,6 +124,7 @@ export const TodoContainer = () => {
                 items={todosData}
                 onEdit={handleEdit}
                 onComplete={handleComplete}
+                completeId={todoCompleteId}
                 onEdit={handleEdit}
             />
         </main>

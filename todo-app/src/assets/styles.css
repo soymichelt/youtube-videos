@@ -107,6 +107,10 @@ main {
     margin: 0;
     transition: .3s;
 }
+.todo-item.todo-completed h2, .todo-item.todo-completed p {
+    text-decoration: line-through;
+    color: #a8a9aa;
+}
 .todo-item .todo-item-actions {
     display: flex;
 }
@@ -145,6 +149,9 @@ main {
 
     cursor: pointer;
     transition: .3s;
+}
+.todo-item .btn:disabled {
+    opacity: .8;
 }
 
 .tema-oscuro {

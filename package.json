@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/soymichelt/youtube-videos/issues"
   },
-  "homepage": "https://github.com/soymichelt/youtube-videos#readme"
+  "homepage": "https://github.com/soymichelt/youtube-videos#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
 }

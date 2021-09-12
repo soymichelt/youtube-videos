@@ -8,6 +8,7 @@ export const TodoList = ({
     loading,
     onComplete,
     onEdit,
+    completeId,
 }) => {
     return (
         <>
@@ -22,7 +23,7 @@ export const TodoList = ({
                         return (
                             <article
                                 key={item.TodoID}
-                                className="todo-item"
+                                className={`todo-item ${item.TodoState === 2 ? 'todo-completed' : ''}`}
                             >
                                 <div className="todo-item-contenido">
                                     <h2>{item.Author}</h2>
@@ -35,12 +36,15 @@ export const TodoList = ({
                                     >
                                         <img src={CompleteIcon} />
                                     </button>
-                                    <button
-                                        className="btn"
-                                        onClick={() => onEdit(item)}
-                                    >
-                                        <img src={EditIcon} />
-                                    </button>
+                                    {item.TodoState === 1 && (
+                                        <button
+                                            className="btn"
+                                            onClick={() => onEdit(item)}
+                                            disabled={completeId && completeId === item.TodoID}
+                                        >
+                                            <img src={EditIcon} />
+                                        </button>
+                                    )}
                                 </div>
                             </article>
                         );

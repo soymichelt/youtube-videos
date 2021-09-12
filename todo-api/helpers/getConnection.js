@@ -1,18 +1,31 @@
 const Connection = require('tedious').Connection;
 
+const dotenv = require('dotenv');
+dotenv.config();
+
+const {
+    SERVER,
+    AUTHENTICATION_TYPE,
+    AUTHENTICATION_USERNAME,
+    AUTHENTICATION_PASSWORD,
+    OPTION_ENCRYPT,
+    OPTION_DATABASE,
+    OPTION_ROW_COLLECTION_ON_DONE,
+} = process.env;
+
 const configConnection = {
-    server: 'todosappserver.database.windows.net',
+    server: SERVER,
     authentication: {
-        type: 'default',
+        type: AUTHENTICATION_TYPE,
         options: {
-            userName: 'adminapptodos',
-            password: 'Channel321*',
+            userName: AUTHENTICATION_USERNAME,
+            password: AUTHENTICATION_PASSWORD,
         }
     },
     options: {
-        encrypt: true,
-        database: 'TodosDb',
-        rowCollectionOnDone: true,
+        encrypt: OPTION_ENCRYPT,
+        database: OPTION_DATABASE,
+        rowCollectionOnDone: OPTION_ROW_COLLECTION_ON_DONE,
     }
 };
 
