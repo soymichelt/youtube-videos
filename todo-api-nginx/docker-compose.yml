@@ -11,7 +11,7 @@ services:
     loadbalancer:
       build: ./
       ports:
-        - "3000:80"
+        - "9000:80"
       depends_on:
         - api1
         - api2
