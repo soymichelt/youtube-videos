@@ -4,28 +4,28 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const {
-    SERVER,
-    AUTHENTICATION_TYPE,
-    AUTHENTICATION_USERNAME,
-    AUTHENTICATION_PASSWORD,
-    OPTION_ENCRYPT,
-    OPTION_DATABASE,
-    OPTION_ROW_COLLECTION_ON_DONE,
+    DATABASE_SERVER,
+    DATABASE_AUTHENTICATION_TYPE,
+    DATABASE_AUTHENTICATION_USERNAME,
+    DATABASE_AUTHENTICATION_PASSWORD,
+    DATABASE_OPTION_ENCRYPT,
+    DATABASE_OPTION_DATABASE,
+    DATABASE_OPTION_ROW_COLLECTION_ON_DONE,
 } = process.env;
 
 const configConnection = {
-    server: SERVER,
+    server: DATABASE_SERVER,
     authentication: {
-        type: AUTHENTICATION_TYPE,
+        type: DATABASE_AUTHENTICATION_TYPE,
         options: {
-            userName: AUTHENTICATION_USERNAME,
-            password: AUTHENTICATION_PASSWORD,
+            userName: DATABASE_AUTHENTICATION_USERNAME,
+            password: DATABASE_AUTHENTICATION_PASSWORD,
         }
     },
     options: {
-        encrypt: OPTION_ENCRYPT,
-        database: OPTION_DATABASE,
-        rowCollectionOnDone: OPTION_ROW_COLLECTION_ON_DONE,
+        encrypt: true,
+        database: DATABASE_OPTION_DATABASE,
+        rowCollectionOnDone: true,
     }
 };
 
