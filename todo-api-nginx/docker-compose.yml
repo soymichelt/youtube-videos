@@ -12,6 +12,12 @@ services:
         - "9002:9000"
       environment:
         SERVER_TAG: "SERVICE API 2"
+    api3:
+      build: ./../todo-api
+      ports:
+        - "9003:9000"
+      environment:
+        SERVER_TAG: "SERVICE API 3"
     loadbalancer:
       build: ./
       ports:
@@ -19,3 +25,4 @@ services:
       depends_on:
         - api1
         - api2
+        - api3
