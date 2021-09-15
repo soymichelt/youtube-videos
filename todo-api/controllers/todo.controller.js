@@ -1,6 +1,7 @@
 const todosRoute = require('express').Router();
 const {v4: uuidv4} = require('uuid');
 const todosModel = require('./../models/todo.model');
+const {sendMessage} = require('./../helpers/slackNotification');
 
 todosRoute.get('/', async (req, res) => {
     todosModel.allTodo()
@@ -48,13 +49,10 @@ todosRoute.post('/', async (req, res) => {
         description,
         state,
     })
-    .then((rowCount, more) => {
+    .then((rowCount, more) => sendMessage(`"${author}" deberá hacer lo siguiente: ${description}`))
+    .then(() => {
         res.status(200).json({
-            data: {
-                rowCount,
-                more,
-                todoID,
-            },
+            data: { todoID },
         });
     })
     .catch(error => {
