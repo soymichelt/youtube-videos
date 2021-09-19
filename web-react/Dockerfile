@@ -1,4 +1,4 @@
-FROM node:16.8.0 AS empaquetador
+FROM node:16.8.0 AS build
 
 WORKDIR /usr/src/app
 
@@ -10,12 +10,12 @@ COPY ./ ./
 
 RUN npm run build
 
-FROM nginx:latest AS servidorweb
+FROM nginx:latest
 
 WORKDIR /usr/share/nginx/html
 
 RUN rm -rf ./*
 
-COPY --from=empaquetador /usr/src/app/build/* ./
+COPY --from=build /usr/src/app/build/* ./
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
