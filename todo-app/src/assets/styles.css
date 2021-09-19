@@ -55,8 +55,11 @@ main {
     background-color: #2F72DE;
 }
 
-.formulario, .todo {
+.formulario {
     max-width: 620px;
+}
+
+.formulario, .todo {
     width: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -66,11 +69,29 @@ main {
     transition: .3s;
 }
 
+.todo-sections-container {
+    min-height: calc(100vh - 64px - 28px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 24px;
+}
+
 .todo-container {
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.todo-container-title {
+    font-size: 1rem;
+    text-align: center;
+    padding-block: 1rem;
+    background: #f4f5f773;
+    color: #172b4d;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .loader {
@@ -86,6 +107,7 @@ main {
 
 .todo {
     min-height: 500px;
+    height: 100%;
     transition: .5s;
 }
 .todo.todo-loading {
@@ -93,19 +115,33 @@ main {
 }
 
 .todo-item {
-    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e5e6e6;
+    border-left: 4px solid #2F72DE;
+    padding: 12px;
+    margin: 16px;
     border-bottom: 1px solid #e5e6e6;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 }
-.todo-item:last-child {
-    border-bottom: none;
+
+.todo-item h2 {
+    font-size: 1rem;
 }
+
 
 .todo-item h2, .todo-item p {
     margin: 0;
     transition: .3s;
+}
+.todo-item p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.todo-item.todo-completed {
+    border-left: 4px solid #03CEA4;
 }
 .todo-item.todo-completed h2, .todo-item.todo-completed p {
     text-decoration: line-through;
@@ -129,8 +165,12 @@ main {
 }
 
 .todo-item p {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.todo-item-actions {
+    margin-top: 8px;
 }
 
 .todo-item .btn {
@@ -145,7 +185,7 @@ main {
     text-transform: uppercase;
     font-weight: 700;
     color: #262EC9;
-    margin-left: 12px;
+    margin-right: 12px;
 
     cursor: pointer;
     transition: .3s;

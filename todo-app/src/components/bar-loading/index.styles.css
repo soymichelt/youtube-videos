@@ -1,0 +1,54 @@
+.bar-loading {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 10;
+    overflow: hidden;
+    width: 100%;
+    height: 4px;
+    background-color: #D5E3F8;
+}
+.bar-loading__bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bar-loading__bar:before {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    background-color: #2F72DE;
+    animation: bar1 1.5s infinite ease-out;
+}
+
+.bar-loading__bar:after {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    background-color: #2F72DE;
+    animation: bar2 1.5s infinite ease-in;
+}
+
+@keyframes bar1 {
+    0% {
+        left: -100%;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        width: 10%;
+    }
+}
+
+@keyframes bar2 {
+    0% {
+        left: -150%;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        width: 10%;
+    }
+}

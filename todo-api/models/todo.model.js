@@ -54,11 +54,25 @@ const updateTodo = (todoData) => {
 const completeTodo = (todoID) => {
     const query = `
         UPDATE [dbo].[Todos]
-        SET TodoState = 2
+        SET TodoState = 5
         WHERE TodoID = @todoID
     `;
     const parameters = [
         {name: 'todoID', type: TYPES.UniqueIdentifier, value: todoID},
+    ];
+
+    return execQuery.execWriteCommand(query, parameters);
+};
+
+const changeStateTodo = (todoID, state) => {
+    const query = `
+        UPDATE [dbo].[Todos]
+        SET TodoState = @state
+        WHERE TodoID = @todoID
+    `;
+    const parameters = [
+        {name: 'todoID', type: TYPES.UniqueIdentifier, value: todoID},
+        {name: 'state', type: TYPES.SmallInt, value: state},
     ];
 
     return execQuery.execWriteCommand(query, parameters);
@@ -100,6 +114,7 @@ module.exports = {
     addTodo,
     updateTodo,
     completeTodo,
+    changeStateTodo,
     deleteTodo,
     allTodo,
     getByIDTodo,

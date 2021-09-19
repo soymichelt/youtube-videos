@@ -104,6 +104,23 @@ todosRoute.put('/:id/completed', async(req, res) => {
     });
 });
 
+todosRoute.put('/:id/changeState', async(req, res) => {
+    const {id: todoID} = req.params;
+    const {state} = req.body;
+    todosModel.changeStateTodo(todoID, state)
+    .then((rowCount, more) => {
+        res.status(200).json({
+            data: {
+                rowCount,
+                more,
+            }
+        });
+    })
+    .catch(error => {
+        res.status(500).json({error});
+    });
+});
+
 todosRoute.delete('/:id', async (req, res) => {
     const {id: todoID} = req.params;
     todosModel.deleteTodo(todoID)

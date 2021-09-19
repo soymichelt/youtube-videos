@@ -1,11 +1,19 @@
 import React, { useEffect, useState, } from "react";
-import { TodoForm } from './../components/todo-form';
-import { TodoList } from "./../components/todo-list";
+import { TodoForm } from '../components/modal-form/todo-form';
+import { TodoSections } from "../components/sections";
 import { useInputField } from "../hooks/useInputField";
+import { BarLoading } from "../components/bar-loading";
+import { Header } from "../components/header";
 
 const API_URL = `${process.env.REACT_APP_API_URL}`;
 
-console.log("Conectados a: ", API_URL);
+const SECTIONS_LIST= [
+    {sectionId: '1', name: 'ToDo',},
+    {sectionId: '2', name: 'Work In Progress',},
+    {sectionId: '3', name: 'Task Blocked',},
+    {sectionId: '4', name: 'QA Testing',},
+    {sectionId: '5', name: 'Done',},
+];
 
 export const TodoContainer = () => {
 
@@ -17,6 +25,7 @@ export const TodoContainer = () => {
     const [loadingTodoEditing, setLoadingTodoEditing] = useState(false);
     const [todoSelected, setTodoSelected] = useState(null);
     const [todoCompleteId, setTodoCompleteId] = useState(null);
+    const [showEditModal, setShowEditModal] = useState(false);
     
     useEffect(() => {
         if(loadingTodoList) {
@@ -43,7 +52,8 @@ export const TodoContainer = () => {
         //clean fields
         authorField.update('');
         descriptionField.update('');
-        setTodoSelected(null);
+        if(todoSelected) setTodoSelected(null);
+        setShowEditModal(false);
     };
 
     const handleSave = (todo, editMode = false) => {
@@ -115,26 +125,85 @@ export const TodoContainer = () => {
         authorField.update(todo.Author);
         descriptionField.update(todo.TodoDescription);
         setTodoSelected(todo);
+        setShowEditModal(true);
+    };
+
+    const handleChangeState = (todoID, state) => {
+        fetch(`${API_URL}/${todoID}/changeState`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                state: state,
+            }),
+        })
+        .then(res => res.json())
+        .then(data => {
+            setLoadingTodoList(true);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    };
+
+    const handleDragEnd = (result) => {
+        if(!result.destination) return;
+
+        console.log(result);
+
+        handleChangeState(result.draggableId, parseInt(result.destination.droppableId));
+        
+        const newTodoItems = [];
+        todosData.forEach(item => {
+            if(item.TodoID === result.draggableId) {
+                newTodoItems.push({
+                    ...item,
+                    TodoState: parseInt(result.destination.droppableId)
+                });
+            }
+            else {
+                newTodoItems.push({
+                    ...item
+                });
+            }
+        });
+        console.log("New Items Array >>> ", newTodoItems);
+        setTodosData(newTodoItems);
     };
 
     return (
-        <main>
-            <TodoForm
-                selected={todoSelected}
-                authorField={authorField}
-                descriptionField={descriptionField}
-                disabledForm={loadingTodoEditing}
-                onSave={handleSave}
-                onDelete={handleDelete}
+        <>
+            {loadingTodoList && (
+                <BarLoading />
+            )}
+            <Header
+                onCreate={() => setShowEditModal(true)}
             />
-            <TodoList
-                loading={loadingTodoList}
-                items={todosData}
-                onEdit={handleEdit}
-                onComplete={handleComplete}
-                completeId={todoCompleteId}
-                onEdit={handleEdit}
-            />
-        </main>
+            <main>
+                <TodoForm
+                    selected={todoSelected}
+                    authorField={authorField}
+                    descriptionField={descriptionField}
+                    disabledForm={loadingTodoEditing}
+                    onSave={handleSave}
+                    onDelete={handleDelete}
+                    isActive={showEditModal}
+                    onClose={() => {
+                        setShowEditModal(false);
+                        resetForm();
+                    }}
+                />
+                <TodoSections
+                    loading={loadingTodoList}
+                    items={todosData}
+                    onEdit={handleEdit}
+                    onComplete={handleComplete}
+                    completeId={todoCompleteId}
+                    sectionList={SECTIONS_LIST}
+                    onDragEnd={handleDragEnd}
+                />
+            </main>
+        </>
     );
 };
