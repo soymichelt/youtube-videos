@@ -1,4 +1,4 @@
-FROM node:16.8.0 AS build
+FROM node:16.8.0 AS builder
 
 WORKDIR /usr/src/app
 
@@ -16,6 +16,6 @@ WORKDIR /usr/share/nginx/html
 
 RUN rm -rf ./*
 
-COPY --from=build /usr/src/app/build/* ./
+COPY --from=builder /usr/src/app/build ./
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
