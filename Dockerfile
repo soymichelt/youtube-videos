@@ -1,9 +1,10 @@
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS builder
 WORKDIR /app
-COPY *.csproj ./
-RUN dotnet restore
 COPY ./ ./
-RUN dotnet publish -c release -o /build
+WORKDIR /app/AppVenta.Infraestructura.API/
+RUN dotnet restore
+
+RUN dotnet publish -c release -o ./../build
 
 FROM mcr.microsoft.com/dotnet/runtime:3.1
 WORKDIR /app
