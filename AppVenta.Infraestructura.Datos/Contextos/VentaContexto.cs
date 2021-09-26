@@ -15,11 +15,7 @@ namespace AppVenta.Infraestructura.Datos.Contextos {
 		public DbSet<VentaDetalle> VentaDetalles { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options) {
-			options.UseCosmos(
-				"https://appventascosmos.documents.azure.com:443/",
-				"Robz80sxz81y0IIvXZpRXpmYDQxBIKn2ceh3zCgp9FvOaWn6ueNdUTugyAyrtQZrKTj5WqyQi2EA1W2cnnYHdQ==",
-				"appventascosmos"
-			);
+			options.UseSqlServer("Server=tcp:serverappventa.database.windows.net,1433;Initial Catalog=app-venta;Persist Security Info=False;User ID=adminappventa;Password=Channel321*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 		}
 
 		protected override void OnModelCreating(ModelBuilder builder) {
