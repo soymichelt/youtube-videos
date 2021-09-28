@@ -17,10 +17,17 @@ namespace AppVenta.Infraestructura.API {
 			Configuration = configuration;
 		}
 
+		string corsPolicy = "AllowAllOrigins";
+
 		public IConfiguration Configuration { get; }
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services) {
+			services.AddCors(options => {
+				options.AddPolicy(corsPolicy, builder => {
+					builder.AllowAnyOrigin();
+				});
+			});
 			services.AddControllers();
 		}
 
@@ -35,6 +42,8 @@ namespace AppVenta.Infraestructura.API {
 			app.UseRouting();
 
 			app.UseAuthorization();
+
+			app.UseCors(corsPolicy);
 
 			app.UseEndpoints(endpoints => {
 				endpoints.MapControllers();

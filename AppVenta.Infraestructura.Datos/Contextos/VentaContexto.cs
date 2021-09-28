@@ -14,6 +14,8 @@ namespace AppVenta.Infraestructura.Datos.Contextos {
 		string DATABASE = Environment.GetEnvironmentVariable("DATABASE");
 		string USERNAME = Environment.GetEnvironmentVariable("USERNAME");
 		string PASSWORD = Environment.GetEnvironmentVariable("PASSWORD");
+		string INTEGRATED_SECURITY = Environment.GetEnvironmentVariable("INTEGRATED_SECURITY");
+		string TRUST_SERVER_CERTIFICATE = Environment.GetEnvironmentVariable("TRUST_SERVER_CERTIFICATE");
 
 		public VentaContexto() {
 			this.Database.EnsureCreated();
@@ -26,7 +28,7 @@ namespace AppVenta.Infraestructura.Datos.Contextos {
 		public DbSet<VentaDetalle> VentaDetalles { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options) {
-			options.UseSqlServer($"Server={SERVER},{PORT};Initial Catalog={DATABASE};Persist Security Info=False;User ID={USERNAME};Password={PASSWORD};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+			options.UseSqlServer($"Server={SERVER},{PORT};Initial Catalog={DATABASE};Persist Security Info=False;User ID={USERNAME};Password={PASSWORD};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate={TRUST_SERVER_CERTIFICATE}; Integrated Security={INTEGRATED_SECURITY};Connection Timeout=30;");
 		}
 
 		protected override void OnModelCreating(ModelBuilder builder) {

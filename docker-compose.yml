@@ -1,0 +1,24 @@
+version: "3.3"
+services:
+  apiventa:
+    build: ./
+    ports:
+      - "9000:80"
+    environment:
+      SERVER: "sqlserver"
+      PORT: 1433
+      DATABASE: "AppVentaDb"
+      USERNAME: "sa"
+      PASSWORD: "Channel321*"
+      INTEGRATED_SECURITY: "false"
+      TRUST_SERVER_CERTIFICATE: "true"
+    depends_on:
+      - database
+    links:
+      - "database"
+  database:
+    image: "mcr.microsoft.com/mssql/server"
+    hostname: "sqlserver"
+    environment:
+      SA_PASSWORD: "Channel321*"
+      ACCEPT_EULA: "Y"
