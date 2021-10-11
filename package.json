@@ -1,0 +1,23 @@
+{
+  "name": "youtube-videos",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "todo-api"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start:api": "npm run start --workspace=todo-api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soymichelt/youtube-videos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soymichelt/youtube-videos/issues"
+  },
+  "homepage": "https://github.com/soymichelt/youtube-videos#readme"
+}
