@@ -1,0 +1,7 @@
+CREATE TABLE dbo.Todos (
+	TodoID				UNIQUEIDENTIFIER		NOT NULL		PRIMARY KEY,
+	Author				VARCHAR(150)			NOT NULL,
+	TodoDate			DATETIME				NOT NULL,
+	TodoDescription		VARCHAR(4000)			NOT NULL,
+	TodoState			SMALLINT				NOT NULL
+);
