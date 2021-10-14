@@ -1,0 +1,45 @@
+version: '3'
+services:
+  api1:
+    build: ./../todo-api
+    ports:
+      - "9001:9000"
+    environment:
+      SERVER_TAG: "SERVICE API 1"
+      DATABASE_SERVER: "sqlserver"
+      DATABASE_AUTH_TYPE: "default"
+      DATABASE_USERNAME: "sa"
+      DATABASE_PASSWORD: "Channel321*"
+      DATABASE_NAME: "TodosDb"
+    depends_on:
+      - database
+    links:
+      - "database"
+  api2:
+    build: ./../todo-api
+    ports:
+      - "9002:9000"
+    environment:
+      SERVER_TAG: "SERVICE API 2"
+      DATABASE_SERVER: "sqlserver"
+      DATABASE_AUTH_TYPE: "default"
+      DATABASE_USERNAME: "sa"
+      DATABASE_PASSWORD: "Channel321*"
+      DATABASE_NAME: "TodosDb"
+    depends_on:
+      - database
+    links:
+      - "database"
+  loadbalancer:
+    build: ./
+    ports:
+      - "9000:80"
+    depends_on:
+      - api1
+      - api2
+  database:
+    image: "mcr.microsoft.com/mssql/server"
+    hostname: "sqlserver"
+    environment:
+      SA_PASSWORD: "Channel321*"
+      ACCEPT_EULA: "Y"
