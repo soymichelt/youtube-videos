@@ -8,7 +8,7 @@ En este vídeo también aprenderás a integrar tus aplicaciones de NodeJS con el
 
 Si te gusta este vídeo, por favor deja tu like y suscríbete si deseas recibir más contenido relacionado a la programación.
 
-Puedes encontrar más vídeos como este en mi canal de YouTube Soymichel Dev 👨‍💻👩‍💻👩‍💻.
+Puedes encontrar más vídeos como este en mi canal de [YouTube Soymichel Dev](https://youtube.soymichel.dev) 👨‍💻👩‍💻👩‍💻.
 
 # Información de Contacto
 - [LinkedIn](https://www.linkedin.com/in/soymichelt)
